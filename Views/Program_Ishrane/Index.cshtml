@@ -1,0 +1,45 @@
+﻿@model IEnumerable<FitnessApp.Models.DAL.Program_Ishrane>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Program ishrane</h3>
+
+<p>
+    @Html.ActionLink("Dodaj", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Klijent.Ime)
+        </th>
+        <th>
+            Cena programa
+        </th>
+        <th>
+            Opis programa
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Klijent.Ime)  @Html.DisplayFor(modelItem => item.Klijent.Prezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CenaPrograma)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpisPrograma)
+        </td>
+        <td>
+            @Html.ActionLink("Izmeni", "Edit", new { id=item.ProgramIshraneId }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.ProgramIshraneId }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.ProgramIshraneId })
+        </td>
+    </tr>
+}
+
+</table>

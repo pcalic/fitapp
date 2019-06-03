@@ -1,0 +1,40 @@
+﻿@model IEnumerable<FitnessApp.Models.DAL.klijent_trener>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Lični treninzi</h3>
+
+<p>
+    @Html.ActionLink("Dodaj", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           Klijent
+        </th>
+        <th>
+            Trener
+        </th>
+        <th>
+            Opis treninga
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Klijent.Ime) @Html.DisplayFor(modelItem => item.Klijent.Prezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Trener.Ime)  @Html.DisplayFor(modelItem => item.Trener.Prezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OpisTreninga)
+        </td>
+    </tr>
+}
+
+</table>

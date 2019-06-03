@@ -1,0 +1,58 @@
+﻿@model FitnessApp.Models.DAL.Clanska_Karta
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Clanska_Karta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Klijent.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Klijent.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumUplate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumUplate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumVazenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumVazenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrojKarte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrojKarte)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ClanskaKartaId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

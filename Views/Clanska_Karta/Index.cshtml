@@ -1,0 +1,57 @@
+﻿@model IEnumerable<FitnessApp.Models.DAL.Clanska_Karta>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Članarina</h3>
+
+<p>
+    @Html.ActionLink("Dodaj", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Klijent.Ime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cena)
+        </th>
+        <th>
+            Datum uplate
+        </th>
+        <th>
+            Datum važenja
+        </th>
+        <th>
+           Broj karte
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Klijent.Ime) @Html.DisplayFor(modelItem => item.Klijent.Prezime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cena)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumUplate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatumVazenja)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BrojKarte)
+        </td>
+        <td>
+            @Html.ActionLink("Izmeni", "Edit", new { id=item.ClanskaKartaId }) |
+            @Html.ActionLink("Detalji", "Details", new { id=item.ClanskaKartaId }) |
+            @Html.ActionLink("Obriši", "Delete", new { id=item.ClanskaKartaId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,64 @@
+﻿@model FitnessApp.Models.DAL.Clanska_Karta
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h3>Obriši</h3>
+
+
+<div>
+    <h4>Clanska karta</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Klijent.Ime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Klijent.Ime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cena)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cena)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumUplate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumUplate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DatumVazenja)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DatumVazenja)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BrojKarte)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BrojKarte)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Obriši" class="btn btn-default" /> |
+            @Html.ActionLink("Nazad", "Index")
+        </div>
+    }
+</div>
